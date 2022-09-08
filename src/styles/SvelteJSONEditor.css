@@ -1,0 +1,17 @@
+.svelte-jsoneditor-react {
+  max-height: 64vh;
+  min-height: 64vh;
+  height: 64vh;
+
+  --jse-theme-color: #1890ff;
+  --jse-theme-color-highlight: #687177;
+}
+
+#dark .svelte-jsoneditor-react {
+  max-height: 64vh;
+  min-height: 64vh;
+  height: 64vh;
+
+  --jse-theme-color: #001529;
+  --jse-theme-color-highlight: #687177;
+}

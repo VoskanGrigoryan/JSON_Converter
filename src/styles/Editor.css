@@ -1,0 +1,21 @@
+.editorMenuContainer {
+    background-color: #ffffff;
+    padding: 10px;
+    margin-bottom: 16px;
+}
+
+.optionsContainer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.uploadButton {
+    background-color: #1890ff;
+    height: 31px;
+    padding: 7px 15px;
+    margin-right: 0;
+    font-size: 14px;
+    border-radius: 2px;
+    cursor: pointer;
+    color: #ffffff;
+}

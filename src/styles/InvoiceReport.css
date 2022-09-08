@@ -1,0 +1,17 @@
+.filterOptionsContainer {
+  background-color: #ffffff;
+  border-radius: 4px;
+  padding: 12px;
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: center;
+}
+
+.invoiceTableMenuContainer {
+  background-color: #ffffff;
+  border-radius: 4px;
+  padding: 12px;
+  margin-top: 12px;
+  display: flex;
+  justify-content: flex-end;
+}
