@@ -63,6 +63,7 @@ const InvoiceEditorPage = () => {
     (state) => state.invoiceReducer.selectedInvoices
   );
 
+  console.log(invoiceData)
 
   const columns = [
     {

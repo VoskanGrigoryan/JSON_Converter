@@ -3,3 +3,10 @@
 * {
   font-family: "Roboto Flex", "Raleway", sans-serif;
 }
+
+
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}

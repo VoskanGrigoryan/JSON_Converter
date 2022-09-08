@@ -7,6 +7,8 @@ import {
   DeleteOutlined,
 } from "@ant-design/icons";
 import "../../styles/Editor.css";
+import JSONPretty from 'react-json-pretty';
+import 'react-json-pretty/themes/acai.css';
 
 const JSONEditorMenu = ({
   menuDisabled,
@@ -43,6 +45,11 @@ const JSONEditorMenu = ({
     <div className="editorMenuContainer">
       <Modal
         open={open}
+        width="100%"
+        style={{
+          top: 20,
+        }}
+        bodyStyle={{height: "70vh"}}
         title="JSON Preview"
         onOk={handleOk}
         onCancel={handleCancel}
@@ -52,13 +59,15 @@ const JSONEditorMenu = ({
           </Button>,
         ]}
       >
+        <JSONPretty id="json-pretty" data={fileContent} className="modalDisplay"></JSONPretty>
+
       </Modal>
       <Row className="optionsContainer">
         <Col>
           <Space>
             <div>
-              <label htmlFor="filePicker">
-                <UploadOutlined className="uploadButton" />
+              <label htmlFor="filePicker" className="uploadButton" >
+                <UploadOutlined />
               </label>
               <input
                 type="file"

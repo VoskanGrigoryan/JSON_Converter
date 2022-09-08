@@ -10,12 +10,36 @@
 }
 
 .uploadButton {
-    background-color: #1890ff;
+    color: white;
+    /* background-color: #1890ff; */
+    background-color: #0A6ED1;
     height: 31px;
     padding: 7px 15px;
     margin-right: 0;
     font-size: 14px;
     border-radius: 2px;
     cursor: pointer;
-    color: #ffffff;
+}
+
+.modalDisplay {
+    max-height: 68vh;
+    min-height: 68vh;
+    /* background: #282a36; */
+    background: #ffffff !important;
+    /* padding: 8px; */
+    font-size: 14px;
+    line-height: 1rem;
+    overflow-x: scroll;
+    /* overflow-y: auto; */
+}
+
+.ant-modal-body {
+    padding: 8px !important;
+}
+
+.__json-pretty__ {
+    background: #ffffff !important;
+}
+.ant-btn-primary {
+    background: #0A6ED1 !important;
 }

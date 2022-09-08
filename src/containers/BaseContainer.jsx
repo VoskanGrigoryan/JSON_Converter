@@ -1,12 +1,13 @@
 import React from "react";
-import { Layout, Menu, Typography } from "antd";
-import { ReactComponent as AccentureLogo } from "../icons/acc_solid.svg";
+import { Col, Layout, Menu, Row, Space, Typography } from "antd";
+import { ReactComponent as SapLogo } from "../icons/sap-logo.svg";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import {
   HomeOutlined,
   FormOutlined,
   ContainerOutlined,
+  UserOutlined
 } from "@ant-design/icons";
 import { Content } from "antd/lib/layout/layout";
 
@@ -39,35 +40,45 @@ const BaseContainer = ({ children }) => {
       },
       style: { margin: 0 },
     },
-    {
-      label: "Editor",
-      key: "editor",
-      icon: <FormOutlined />,
-      disabled: true,
-      onClick: () => {
-        navigate("/editor");
-      },
-      style: { margin: 0 },
-    },
+    // {
+    //   label: "Editor",
+    //   key: "editor",
+    //   icon: <FormOutlined />,
+    //   disabled: true,
+    //   onClick: () => {
+    //     navigate("/editor");
+    //   },
+    //   style: { margin: 0 },
+    // },
   ];
 
   return (
     <Layout style={{ minHeight: "100vh" }}>
       <Header
         style={{
-          backgroundColor: "#1890ff",
-          paddingLeft: 24,
+          backgroundColor: "#354A5F",
+          paddingLeft: 0,
+          paddingRight: 0,
           display: "flex",
           alignItems: "center",
         }}
       >
-        <AccentureLogo height={24} width={36} />
-        <Title
-          level={4}
-          style={{ margin: 0, paddingLeft: 18, color: "#ffffff" }}
-        >
-          {navigationConfig.headerTitle}
-        </Title>
+        <Row className="headerContainer">
+          <Col>
+            <Space>
+            <SapLogo height={28} width={58} style={{marginTop: 30, marginLeft: 20}}/>
+            <Title
+              level={4}
+              style={{ margin: 0, color: "#ffffff", marginLeft: 12 }}
+            >
+              {navigationConfig.headerTitle}
+            </Title>
+            </Space>
+          </Col>
+          <Col>
+          <UserOutlined style={{marginRight: 24, marginTop: 35, fontSize: 20, color: '#ffffff', cursor:  "pointer"}} />
+          </Col>
+        </Row>
       </Header>
       <Layout>
         <Sider collapsed={true} theme="light">
