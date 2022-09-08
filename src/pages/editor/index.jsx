@@ -18,43 +18,38 @@ const InvoiceEditorPage = () => {
     },
     text: undefined,
   });
-  // const [fakeData, setFakeData] = useState({
-  //   IndExe: "1",
-  //   MontoItem: "206",
-  //   NmbItem: "ALOJAMIENTO HABITACIONES",
-  //   PrcItem: "206",
-  //   QtyItem: "1",
-  //   RUTEmisor: "99581150-2",
-  //   FchEmis: "2019-05-28",
-  //   IndServicio: "4",
-  //   TipoDTE: "110",
-  //   MntTotOtrMnda: "700",
-  //   TpoCambio: "PESO CL",
-  //   CiudadRecep: "New Jersey",
-  //   CmnaRecep: "New Jersey",
-  //   DirRecep: "Somewhere",
-  //   Nacionalidad: "331",
-  //   GiroRecep: "Sin Giro",
-  //   RUTRecep: "55555555-5",
-  //   RznSocRecep: "Empresa Extranjera",
-  //   MntExe: "206",
-  //   MntTotal: "206",
-  //   TpoMoneda: "DOLAR USA",
-  //   FchRef: "2019-05-28",
-  //   FolioRef: "ACME",
-  //   RazonRef: "RESOLUCION SNA",
-  //   TpoDocRef: "812",
-  //   company_code: "231",
-  //   contract_number: "346246",
-  //   invoice_number: "257435",
-  //   period: "15-09-2022"
-  // })
+  
+  const [superFakeData] = useState([
+    { property: "IndExe", value: "1" },
+    { property: "MontoItem", value: "206" },
+    { property: "NmbItem", value: "ALOJAMIENTO HABITACIONES" },
+    { property: "PrcItem", value: "206" },
+    { property: "QtyItem", value: "1" },
+    { property: "RUTEmisor", value: "99581150-2" },
+    { property: "FchEmis", value: "2019-05-28" },
+    { property: "IndServicio", value: "4" },
+    { property: "TipoDTE", value: "110" },
+    { property: "MntTotOtrMnda", value: "700" },
+    { property: "TpoCambio", value: "PESO CL" },
+    { property: "CiudadRecep", value: "New Jersey" },
+    { property: "CmnaRecep", value: "New Jersey" },
+    { property: "DirRecep", value: "Somewhere" },
+    { property: "Nacionalidad", value: "331" },
+    { property: "GiroRecep", value: "Sin Giro" },
+    { property: "RUTRecep", value: "55555555-5" },
+    { property: "RznSocRecep", value: "Empresa Extranjera" },
+    { property: "MntExe", value: "206" },
+    { property: "TpoMoneda", value: "DOLAR USA" },
+    { property: "FchRef", value: "2019-05-28" },
+    { property: "FolioRef", value: "ACME" },
+    { property: "RazonRef", value: "RESOLUCION SNA" },
+    { property: "TpoDocRef", value: "831" },
+    { property: "company_code", value: "231" },
+    { property: "contract_number", value: "346246" },
+    { property: "invoice_number", value: "257435" },
+    { property: "Period", value: "15-09-2022" },
 
-  // const [fakeTableData, setFakeTableData] = useState({
-  //   property: "name",
-  //   value: "voskan"
-  // })
-
+  ])
   const dispatch = useDispatch();
 
   dispatch(
@@ -140,7 +135,7 @@ const InvoiceEditorPage = () => {
             <Table
               columns={columns}
               size="small"
-              dataSource={invoiceData}
+              dataSource={superFakeData}
               pagination={false}
               scroll={{ y: "calc(66vh - 4em)" }}
               scrollToFirstRowOnChange={true}
