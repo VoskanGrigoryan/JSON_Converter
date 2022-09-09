@@ -8,74 +8,44 @@ import { useNavigate } from "react-router-dom";
 const data = [
   {
     key: "1",
-    name: "John Brown",
-    date: 32,
-    tags: ["Q1", "Q4"],
+    name: "Emabajada Chile",
+    date: "21-06-2022",
+  },
+  {
+    key: "3",
+    name: "Tramite aduana 384",
+    date: "21-06-2022",
   },
   {
     key: "2",
-    name: "Jim Green",
-    date: 42,
-    tags: ["Q3"],
+    name: "Tramite aduana 321",
+    date: "14-07-2022",
   },
   {
     key: "4",
-    name: "John Brown",
-    date: 32,
-    tags: ["Q1", "Q4"],
+    name: "Embajada Peru",
+    date: "17-07-2022"
+  },
+  {
+    key: "12",
+    name: "Formulario importacion 21",
+    date: "29-08-2022",
   },
   {
     key: "5",
-    name: "Jim Green",
-    date: 42,
-    tags: ["Q3"],
-  },
-  {
-    key: "19",
-    name: "John Brown",
-    date: 32,
-    tags: ["Q1", "Q4"],
-  },
-  {
-    key: "20",
-    name: "Jim Green",
-    date: 42,
-    tags: ["Q3"],
-  },
-  {
-    key: "22",
-    name: "Joe Black",
-    date: 32,
-    tags: ["Q1", "Q2"],
-  },
-  {
-    key: "23",
-    name: "John Brown",
-    date: 32,
-    tags: ["Q1", "Q4"],
-  },
-  {
-    key: "24",
-    name: "Jim Green",
-    date: 42,
-    tags: ["Q3"],
-  },
-  {
-    key: "25",
-    name: "Joe Black",
-    date: 32,
-    tags: ["Q1", "Q2"],
+    name: "Tramite Embajada Brasil",
+    date: "09-09-2022",
   },
 ];
 const TemplatesTable = () => {
 
   const navigate = useNavigate();
-  
+
   const [bottom] = useState("bottomCenter");
 
   const columns = [
     {
-      title: "Name",
+      title: "Template name",
       dataIndex: "name",
       key: "name",
     },
@@ -84,7 +54,7 @@ const TemplatesTable = () => {
       dataIndex: "date",
       key: "date",
     },
-  
+
     {
       title: "Edit",
       key: "edit",
@@ -92,7 +62,7 @@ const TemplatesTable = () => {
       width: "80px",
       render: (text, record) => (
         <EditOutlined
-          className="EditButton"
+          style={{cursor: "pointer"}}
           onClick={navigate("/editor")}
         />
       ),
@@ -105,7 +75,7 @@ const TemplatesTable = () => {
       render: (text, record) => (
         <EyeOutlined
           className="visualizeButton"
-          onClick={() =>  navigate("/editor")}
+          onClick={() => navigate("/editor")}
         />
       ),
     },
@@ -117,7 +87,7 @@ const TemplatesTable = () => {
       render: (text, record) => (
         <DeleteFilled
           className="DeleteButton"
-          onClick={() =>  navigate("/editor")}
+          onClick={() => navigate("/editor")}
         />
       ),
     },
@@ -130,7 +100,7 @@ const TemplatesTable = () => {
         bordered
         // title={() => (
         //   <Title level={4} style={{ margin: 0 }}>
-        //     Saved templates
+        //    User Template Table
         //   </Title>
         // )}
         pagination={{

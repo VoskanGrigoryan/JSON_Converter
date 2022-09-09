@@ -23,7 +23,11 @@ const InvoiceTable = () => {
 
     onChange: (selectedRowKeys, selectedRows) => {
       setSelectedRowKeys(selectedRowKeys);
-      addDownloadList(selectedRowKeys)
+     
+    },
+    onSelect: (selectedRowKeys, selectedRows) => {
+      // console.log(selectedRowKeys, selectedRows)
+      dispatch(addDownloadList(selectedRowKeys))
     },
   };
 
@@ -55,6 +59,7 @@ const InvoiceTable = () => {
       dataIndex: ["Encabezado", "Receptor", "CiudadRecep"],
     },
   ];
+
 
   return (
     <Table

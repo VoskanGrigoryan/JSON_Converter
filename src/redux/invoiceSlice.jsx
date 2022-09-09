@@ -19,7 +19,17 @@ const invoiceSlice = createSlice({
       state.referenceInvoiceSelected = true;
     },
     addDownloadList(state, action) {
-      state.downloadInvoiceList = action.payload
+      // state.push({
+      //   lnglat: action.payload,
+      // });
+
+      const payload = action.payload
+
+      state.downloadInvoiceList.push(
+        payload
+      )
+
+      // state.downloadInvoiceList = action.payload
     }
   },
 });

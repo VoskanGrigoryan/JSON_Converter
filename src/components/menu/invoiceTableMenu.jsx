@@ -34,9 +34,6 @@ const InvoiceTableMenu = () => {
     }
   }, [invoice]);
 
-  useEffect(() => {
-      console.log(downloadList)
-  }, [downloadList])
 
   const useInvoiceAsTemplate = () => {
     if (invoice.length === 1) {
@@ -51,14 +48,17 @@ const InvoiceTableMenu = () => {
       duration: 1,
     });
 
-    // downloadFile()
     setTimeout(() => {
       message.success({
         content: 'File/s downloaded',
         duration: 2,
       });
+      downloadFile(downloadList)
     }, 2000);
   }
+
+  
+  console.log(downloadList)
 
   return (
     <Row className="invoiceTableMenuContainer">
@@ -73,7 +73,11 @@ const InvoiceTableMenu = () => {
           placement="bottomLeft"
         >
           <Option value="embChile">Embajada Chile</Option>
+          <Option value="tramiteAduana321">Tramite aduana 321</Option>
           <Option value="tramiteAduana384">Tramite Aduana 384</Option>
+          <Option value="embPeru">Embajada Peru</Option>
+          <Option value="formImport21">Formulario importacion 21</Option>
+          <Option value="embBrasil">Tramite Embajada Brasil</Option>
         </Select>
         <Button
           type="primary"

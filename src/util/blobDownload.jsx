@@ -1,14 +1,17 @@
-const downloadFile = async (data) => {
+const downloadFile = (data) => {
     const fileName = "file";
-    const json = JSON.stringify(data);
+
+    data.forEach(element => {
+    const json = JSON.stringify(element);
     const blob = new Blob([json], { type: "application/json" });
-    const href = await URL.createObjectURL(blob);
+    const href = URL.createObjectURL(blob);
     const link = document.createElement("a");
     link.href = href;
     link.download = fileName + ".json";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
+    });
   };
   
   export default downloadFile;
