@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   selectedInvoices: [],
+  downloadInvoiceList: [],
   referenceInvoice: {},
   referenceInvoiceSelected: false,
 };
@@ -17,8 +18,11 @@ const invoiceSlice = createSlice({
       state.referenceInvoice = action.payload;
       state.referenceInvoiceSelected = true;
     },
+    addDownloadList(state, action) {
+      state.downloadInvoiceList = action.payload
+    }
   },
 });
 
-export const { addInvoices, addReferenceInvoice } = invoiceSlice.actions;
+export const { addInvoices, addReferenceInvoice, addDownloadList } = invoiceSlice.actions;
 export default invoiceSlice.reducer;

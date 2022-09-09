@@ -43,3 +43,7 @@
 .ant-btn-primary {
     background: #0A6ED1 !important;
 }
+
+.ant-btn-dangerous.ant-btn-primary {
+    background: red !important;
+}

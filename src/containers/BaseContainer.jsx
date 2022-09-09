@@ -69,14 +69,14 @@ const BaseContainer = ({ children }) => {
             <SapLogo height={28} width={58} style={{marginTop: 30, marginLeft: 20}}/>
             <Title
               level={4}
-              style={{ margin: 0, color: "#ffffff", marginLeft: 12 }}
+              style={{ margin: 0, color: "#ffffff", marginTop: 8, marginLeft: 12 }}
             >
               {navigationConfig.headerTitle}
             </Title>
             </Space>
           </Col>
           <Col>
-          <UserOutlined style={{marginRight: 24, marginTop: 35, fontSize: 20, color: '#ffffff', cursor:  "pointer"}} />
+          <UserOutlined style={{marginRight: 24, marginTop: 34, fontSize: 20, color: '#ffffff', cursor:  "pointer"}} />
           </Col>
         </Row>
       </Header>

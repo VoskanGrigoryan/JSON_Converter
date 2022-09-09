@@ -3,7 +3,7 @@ import BaseContainer from "../../containers/BaseContainer";
 import { useDispatch, useSelector } from "react-redux";
 import { changeNavigation } from "../../redux/configSlice";
 import JSONEditorMenu from "../../components/menu/jsonEditorMenu";
-import { Col, Row, Table, Typography } from "antd";
+import { Col, Row, Table, Typography, message } from "antd";
 import SvelteJSONEditor from "./SvelteJSONEditor";
 
 const { Title } = Typography;
@@ -11,14 +11,13 @@ const { Title } = Typography;
 const InvoiceEditorPage = () => {
   const [searchText, setSearchText] = useState({ searchText: "" });
   const [fileDetail, setFileDetail] = useState({ fileName: "" });
-  const [menuDisabled, setMenuDisabled] = useState(true);
+  const [menuDisabled, setMenuDisabled] = useState(false);
   const [fileContent, setFileContent] = useState({
     json: {
       greetings: "Edit this document or upload a file!",
     },
     text: undefined,
   });
-  
   const [superFakeData] = useState([
     { property: "IndExe", value: "1" },
     { property: "MontoItem", value: "206" },
@@ -50,6 +49,7 @@ const InvoiceEditorPage = () => {
     { property: "Period", value: "15-09-2022" },
 
   ])
+  
   const dispatch = useDispatch();
 
   dispatch(
@@ -94,9 +94,9 @@ const InvoiceEditorPage = () => {
     if (e.target.files && e.target.files[0]) {
       const updatedJSON = e.target.files[0];
       if (updatedJSON.type !== "application/json") {
-        alert("Error: File could not be uploaded!");
+        message.error('This is a normal message', 2);
       } else {
-        alert("File uploaded");
+        message.info('File uploaded', 2);
         setFileDetail({ fileName: updatedJSON.name });
 
         const fileReader = new FileReader();

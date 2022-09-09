@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { Select, Col, Row, Button } from "antd";
+import { Select, Col, Row, Button, message } from "antd";
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { addReferenceInvoice } from "../../redux/invoiceSlice";
 import "../../styles/InvoiceReport.css";
+import downloadFile from "../../util/blobDownload";
 
 const { Option } = Select;
 
@@ -17,6 +18,7 @@ const InvoiceTableMenu = () => {
   });
 
   const invoice = useSelector((state) => state.invoiceReducer.selectedInvoices);
+  const downloadList = useSelector((state) => state.invoiceReducer.downloadInvoiceList)
 
   useEffect(() => {
     if (invoice.length > 1) {
@@ -32,12 +34,31 @@ const InvoiceTableMenu = () => {
     }
   }, [invoice]);
 
+  useEffect(() => {
+      console.log(downloadList)
+  }, [downloadList])
+
   const useInvoiceAsTemplate = () => {
     if (invoice.length === 1) {
       dispatch(addReferenceInvoice(invoice[0]));
       navigate("/editor");
     }
   };
+
+  const generateInvoiceFormat = () => {
+    message.loading({
+      content: 'Processing',
+      duration: 1,
+    });
+
+    // downloadFile()
+    setTimeout(() => {
+      message.success({
+        content: 'File/s downloaded',
+        duration: 2,
+      });
+    }, 2000);
+  }
 
   return (
     <Row className="invoiceTableMenuContainer">
@@ -59,6 +80,9 @@ const InvoiceTableMenu = () => {
           disabled={format.multipleRows}
           style={{
             width: 150,
+          }}
+          onClick={() => {
+            generateInvoiceFormat()
           }}
         >
           Auto generate

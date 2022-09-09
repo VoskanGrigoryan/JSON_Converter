@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Table } from "antd";
 import { useSelector, useDispatch } from "react-redux";
-import { addInvoices } from "../../redux/invoiceSlice";
+import { addInvoices, addDownloadList } from "../../redux/invoiceSlice";
 
 const InvoiceTable = () => {
   const dispatch = useDispatch();
@@ -23,6 +23,7 @@ const InvoiceTable = () => {
 
     onChange: (selectedRowKeys, selectedRows) => {
       setSelectedRowKeys(selectedRowKeys);
+      addDownloadList(selectedRowKeys)
     },
   };
 
